@@ -5,8 +5,9 @@
         <div class="my-auto text-center">
           <div class="mb-auto d-flex align-items-center flex-column">
             <transition appear
-                        appear-active-class="fade-enter-active-first">
-              <div v-scroll-to="{ element: '#slider', duration: 1500 }" class="slogan"><span class="i innovate">i</span>nnovate
+                        appear-active-class="fade-enter-active-first"
+            >
+              <div v-scroll-to="{ element: '#slider', duration: 1500 }" class="slogan" :style="{ transitionDelay: delay }" ><span class="i innovate">i</span>nnovate
               </div>
             </transition>
 
@@ -41,7 +42,8 @@ export default {
   data () {
     return {
       intro1: require('@/assets/img/Feynman.svg'),
-      intro2: 'https://prismic-io.s3.amazonaws.com/risidio-journal/60b4d16b-c4f4-463e-9d4f-34baa93e2afa_intro-hi-res.mp4'
+      intro2: 'https://prismic-io.s3.amazonaws.com/risidio-journal/60b4d16b-c4f4-463e-9d4f-34baa93e2afa_intro-hi-res.mp4',
+      delay: '3s'
     }
   },
   methods: {
@@ -170,19 +172,19 @@ and (orientation: portrait) {
 
 }
 .fade-enter-active-second {
-  animation-delay: inherit;
-  animation: go 3s;
-
+  animation: go 6s;
+  -webkit-animation-delay: 3s;
 }
 .fade-enter-active-third {
-  animation: go 3s;
-  transition-delay: 6s;
+  animation: go 9s;
+  -webkit-animation-delay: 6s;
 }
 
 @keyframes go {
 
   0% {
     opacity: 0;
+
   }
   100% {
     opacity: 1;
